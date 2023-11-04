@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "26955272022",
+    "firebase_url": "https://attendancesystem-60cb4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "attendancesystem-60cb4",
+    "storage_bucket": "attendancesystem-60cb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26955272022:android:fcec65072e09284f1a50f7",
+        "android_client_info": {
+          "package_name": "com.oomproject.instructor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYJ3xH99IKrN4QtBmN2EWc17eULm8LOJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26955272022:android:16c7f6e9ae3825e71a50f7",
+        "android_client_info": {
+          "package_name": "com.oomproject.instructorpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYJ3xH99IKrN4QtBmN2EWc17eULm8LOJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26955272022:android:6d0f5f1f01c48d641a50f7",
+        "android_client_info": {
+          "package_name": "com.oomproject.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26955272022-e748uqh5tssn5umtib8j1urvboi3iho3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oomproject.login",
+            "certificate_hash": "f4d3fabcf7f82374a2fe5afac31d99dec8e7ce18"
+          }
+        },
+        {
+          "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYJ3xH99IKrN4QtBmN2EWc17eULm8LOJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26955272022:android:060babf97d0fa9781a50f7",
+        "android_client_info": {
+          "package_name": "com.oomproject.qrattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYJ3xH99IKrN4QtBmN2EWc17eULm8LOJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26955272022-e71dp4mlll5j9qpj6j9ikkmsun3t5bni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
