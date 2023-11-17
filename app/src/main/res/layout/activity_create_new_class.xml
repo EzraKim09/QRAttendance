@@ -101,4 +101,11 @@
         android:text="Generate QR Code"
         android:layout_marginTop="20sp" />
 
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/classQrImage" />
+
 </RelativeLayout>

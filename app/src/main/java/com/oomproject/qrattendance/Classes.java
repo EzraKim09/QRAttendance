@@ -4,14 +4,16 @@ public class Classes {
     String classId;
     String instructorName;
     String classDate;
+    String classQrCode;
 
     public Classes() {
     }
 
-    public Classes(String classId, String instructorName, String formattedDate) {
+    public Classes(String classId, String instructorName, String formattedDate, String qrCode) {
         this.classId = classId;
         this.instructorName = instructorName;
         this.classDate = formattedDate;
+        this.classQrCode = qrCode;
     }
 
     public String getClassId() {
@@ -36,5 +38,13 @@ public class Classes {
 
     public void setClassDate(String classDate) {
         this.classDate = classDate;
+    }
+
+    public String getClassQrCode() {
+        return classQrCode;
+    }
+
+    public void setClassQrCode(String classQrCode) {
+        this.classQrCode = classQrCode;
     }
 }
