@@ -1,4 +1,5 @@
-package com.oomproject.qrattendance
+package com.oomproject.qrattendance;
+
 class Item {
     private String name;
     private String description;
