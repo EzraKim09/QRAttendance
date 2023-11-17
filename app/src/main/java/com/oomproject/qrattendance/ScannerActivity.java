@@ -87,7 +87,7 @@ public class ScannerActivity extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference attendanceReference = databaseReference.child("Attendance").child(classId);
 
-        attendanceReference.child(studentId).setValue("Present");
+        attendanceReference.child(studentId).setValue("Present  "+studentId);
 
         Toast.makeText(ScannerActivity.this, studentId + "'s Attendance Updated!!!", Toast.LENGTH_SHORT).show();
     }

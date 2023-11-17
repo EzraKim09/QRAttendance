@@ -15,6 +15,9 @@
         android:theme="@style/Theme.QRAttendance"
         tools:targetApi="31">
         <activity
+            android:name=".AttendanceDisplayer"
+            android:exported="false" />
+        <activity
             android:name=".ShowQrCodeActivity"
             android:exported="false" />
         <activity
