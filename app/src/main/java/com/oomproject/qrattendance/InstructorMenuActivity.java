@@ -37,7 +37,7 @@ public class InstructorMenuActivity extends AppCompatActivity {
         viewClasses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(InstructorMenuActivity.this, AttendanceDisplayer.class);
+                Intent intent = new Intent(InstructorMenuActivity.this, PastClassesDisplayer.class);
                 startActivity(intent);
             }
         });

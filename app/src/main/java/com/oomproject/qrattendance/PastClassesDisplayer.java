@@ -1,10 +1,14 @@
 package com.oomproject.qrattendance;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,11 +20,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AttendanceDisplayer extends AppCompatActivity {
+public class PastClassesDisplayer extends AppCompatActivity {
 
     private Spinner spinnerClasses;
     private DatabaseReference classesReference;
@@ -31,19 +39,18 @@ public class AttendanceDisplayer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attendance_displayer);
+        setContentView(R.layout.activity_past_class_displayer);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>());
+        recyclerView.setAdapter(recyclerViewAdapter);
 
         spinnerClasses = findViewById(R.id.spinnerClasses);
-        recyclerView = findViewById(R.id.kimsRecylerview);
         classesReference = FirebaseDatabase.getInstance().getReference().child("Classes");
         attendanceReference = FirebaseDatabase.getInstance().getReference().child("Attendance");
         fetchClassesFromFirebase();
         setupSpinnerListener();
-
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Set up the LayoutManager
-        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>()); // Initialize an empty adapter
-        recyclerView.setAdapter(recyclerViewAdapter);
     }
 
     private void setupSpinnerListener() {
@@ -51,7 +58,7 @@ public class AttendanceDisplayer extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
                 String selectedClassId = spinnerClasses.getSelectedItem().toString();
-                attendanceReference.child(selectedClassId).addListenerForSingleValueEvent(new ValueEventListener() {
+                attendanceReference.child(selectedClassId).orderByChild("Present").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         List<String> itemValues = new ArrayList<>();
@@ -59,10 +66,8 @@ public class AttendanceDisplayer extends AppCompatActivity {
                             String itemValue = snapshot.getValue(String.class);
                             itemValues.add(itemValue);
                         }
-                        // Process fetched timestamps as needed (display in UI or perform other operations)
-                        recyclerViewAdapter = new RecyclerViewAdapter(itemValues);
-                        recyclerView.setAdapter(recyclerViewAdapter);
-
+                        recyclerViewAdapter.setData(itemValues);
+                        recyclerViewAdapter.notifyDataSetChanged();
                     }
 
                     @Override
@@ -70,13 +75,54 @@ public class AttendanceDisplayer extends AppCompatActivity {
                         Log.d("FirebaseError", databaseError.getMessage());
                     }
                 });
+
+                classesReference.child(selectedClassId).orderByChild("timeStamp").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String instructorName = dataSnapshot.child("instructorName").getValue(String.class);
+                        String classDate = dataSnapshot.child("classDate").getValue(String.class);
+                        String qrCode = dataSnapshot.child("classId").getValue(String.class);
+
+                        updateTextViews(instructorName, classDate, qrCode);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Handle when no item is selected
+                Toast.makeText(PastClassesDisplayer.this, "Select Class from the Scroll Bar", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void updateTextViews(String instructorName, String classDate, String qrCode) {
+        TextView instructorNameDisplay = findViewById(R.id.instructorNameDisplay);
+        TextView classDateDisplay = findViewById(R.id.classDateDisplay);
+        ImageView classQrCodeDisplay = findViewById(R.id.classQrCodeDisplay);
+
+        instructorNameDisplay.setText(instructorName);
+        classDateDisplay.setText(classDate);
+
+        Bitmap qrCodeBitmap = generateQrCode(qrCode);
+
+        classQrCodeDisplay.setImageBitmap(qrCodeBitmap);
+    }
+
+    private Bitmap generateQrCode(String qrCodeString) {
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        try {
+            com.google.zxing.common.BitMatrix bitMatrix = multiFormatWriter.encode(qrCodeString, BarcodeFormat.QR_CODE, 500, 500);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            return barcodeEncoder.createBitmap(bitMatrix);
+        } catch (WriterException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
@@ -86,14 +132,13 @@ public class AttendanceDisplayer extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> classIDsList = new ArrayList<>();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    // Assuming "classId" is the key under each uniqueID node
                     String classId = snapshot.child("classId").getValue(String.class);
                     if (classId != null) {
                         classIDsList.add(classId);
                     }
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(AttendanceDisplayer.this,
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(PastClassesDisplayer.this,
                         android.R.layout.simple_spinner_dropdown_item, classIDsList);
                 spinnerClasses.setAdapter(adapter);
             }

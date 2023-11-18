@@ -5,15 +5,17 @@ public class Classes {
     String instructorName;
     String classDate;
     String classQrCode;
+    long timeStamp;
 
     public Classes() {
     }
 
-    public Classes(String classId, String instructorName, String formattedDate, String qrCode) {
+    public Classes(String classId, String instructorName, String formattedDate, String qrCode, long timeStamp) {
         this.classId = classId;
         this.instructorName = instructorName;
         this.classDate = formattedDate;
         this.classQrCode = qrCode;
+        this.timeStamp = timeStamp;
     }
 
     public String getClassId() {
@@ -46,5 +48,13 @@ public class Classes {
 
     public void setClassQrCode(String classQrCode) {
         this.classQrCode = classQrCode;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

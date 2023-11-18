@@ -19,7 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.classes, parent, false);
         return new ViewHolder(view);
     }
 
@@ -39,11 +39,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewItem = itemView.findViewById(R.id.rollNo); // Replace with your TextView ID in the item layout
+            textViewItem = itemView.findViewById(R.id.recyclerContent);
         }
 
         public void bind(String item) {
             textViewItem.setText(item);
         }
+    }
+
+    public void setData(List<String> newData) {
+        this.dataList = newData;
+        notifyDataSetChanged();
     }
 }

@@ -61,6 +61,7 @@ public class CreateNewClassActivity extends AppCompatActivity {
                 String date = dateEditText.getText().toString();
                 String month = monthEditText.getText().toString();
                 String year = yearEditText.getText().toString();
+                long timestamp = System.currentTimeMillis();
 
                 String classDate = date + "-" + month + "-" + year;
 
@@ -80,7 +81,7 @@ public class CreateNewClassActivity extends AppCompatActivity {
 
                         imageView.setImageBitmap(bitmap);
 
-                        Classes newClass = new Classes(classId, instructorName, classDate, classQrCode);
+                        Classes newClass = new Classes(classId, instructorName, classDate, classQrCode, timestamp);
                         databaseReference.child(classId).setValue(newClass)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override

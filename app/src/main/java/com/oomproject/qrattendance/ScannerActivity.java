@@ -77,7 +77,7 @@ public class ScannerActivity extends AppCompatActivity {
         viewAttendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ScannerActivity.this, ComingSoon.class);
+                Intent intent = new Intent(ScannerActivity.this, PastAttendanceDisplayer.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class ScannerActivity extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference attendanceReference = databaseReference.child("Attendance").child(classId);
 
-        attendanceReference.child(studentId).setValue("Present  "+studentId);
+        attendanceReference.child("Present ").setValue(studentId);
 
         Toast.makeText(ScannerActivity.this, studentId + "'s Attendance Updated!!!", Toast.LENGTH_SHORT).show();
     }
