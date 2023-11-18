@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class InstructorMenuActivity extends AppCompatActivity {
 
@@ -39,6 +40,17 @@ public class InstructorMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(InstructorMenuActivity.this, PastClassesDisplayer.class);
                 startActivity(intent);
+            }
+        });
+
+        MaterialButton logout = findViewById(R.id.logoutButton);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

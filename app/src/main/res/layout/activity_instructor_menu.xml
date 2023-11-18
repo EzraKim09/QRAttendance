@@ -40,4 +40,15 @@
         android:text="View Classes"
         android:layout_marginTop="10sp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewClassesButton"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/brown_dark"
+        android:id="@+id/logoutButton"
+        app:cornerRadius="@android:dimen/app_icon_size"
+        android:text="Logout"
+        android:layout_marginTop="80sp" />
+
 </RelativeLayout>
