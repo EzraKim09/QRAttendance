@@ -7,10 +7,10 @@
     android:gravity="center"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".InstructorRegister">
+    tools:context=".AdminRegister">
 
     <TextView
-        android:text="Instructor Account"
+        android:text="Admin Account"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
