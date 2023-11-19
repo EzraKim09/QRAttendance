@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class AdminLogin extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, editTextPassword;
+    EditText editTextEmail, editTextPassword;
     Button buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -34,8 +35,8 @@ public class AdminLogin extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             String userName = currentUser.getEmail();
-            if(userName != null && userName.endsWith("@kim.me")) {
-                Intent intent = new Intent(getApplicationContext(), InstructorMenuActivity.class);
+            if(userName != null && userName.endsWith("@kim.ad")) {
+                Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -45,7 +46,7 @@ public class AdminLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instructor_login);
+        setContentView(R.layout.activity_admin_login);
 
         FirebaseApp.initializeApp(this);
 
@@ -59,7 +60,7 @@ public class AdminLogin extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), InstructorRegister.class);
+                Intent intent = new Intent(getApplication(), AdminRegister.class);
                 startActivity(intent);
                 finish();
             }
@@ -83,14 +84,14 @@ public class AdminLogin extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.signInWithEmailAndPassword(email + "@kim.me", password)
+                mAuth.signInWithEmailAndPassword(email + "@kim.ad", password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), InstructorMenuActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {

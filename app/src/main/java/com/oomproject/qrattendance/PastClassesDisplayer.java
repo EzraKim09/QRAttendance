@@ -43,7 +43,7 @@ public class PastClassesDisplayer extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>());
+        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>(), null, null);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         spinnerClasses = findViewById(R.id.spinnerClasses);

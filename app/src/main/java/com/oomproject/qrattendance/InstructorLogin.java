@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class InstructorLogin extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, editTextPassword;
+    EditText editTextEmail, editTextPassword;
     Button buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -34,7 +34,7 @@ public class InstructorLogin extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             String userName = currentUser.getEmail();
-            if(userName != null && userName.endsWith("@kim.me")) {
+            if(userName != null && userName.endsWith("@kim.in")) {
                 Intent intent = new Intent(getApplicationContext(), InstructorMenuActivity.class);
                 startActivity(intent);
                 finish();
@@ -83,7 +83,7 @@ public class InstructorLogin extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.signInWithEmailAndPassword(email + "@kim.me", password)
+                mAuth.signInWithEmailAndPassword(email + "@kim.in", password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

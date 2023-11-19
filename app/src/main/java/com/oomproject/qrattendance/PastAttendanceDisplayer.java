@@ -33,7 +33,7 @@ public class PastAttendanceDisplayer extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>());
+        recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>(), null, null);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         classesReference = FirebaseDatabase.getInstance().getReference().child("Classes");

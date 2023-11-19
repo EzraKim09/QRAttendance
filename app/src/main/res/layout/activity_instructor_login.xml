@@ -7,6 +7,7 @@
     android:gravity="center"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:background="@drawable/bg_gradient"
     tools:context=".InstructorLogin">
 
     <TextView
@@ -22,31 +23,32 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:background="@drawable/edit_text_style"
+        android:minHeight="48dp"
+        android:hint="Username (no space)"
+        android:id="@+id/username"
+        android:inputType="textVisiblePassword"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/username"
-            android:hint="Username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:hint="Password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/edit_text_style"
+        android:minHeight="48dp"
+        android:hint="Password (at least 6 characters)"
+        android:id="@+id/password"
+        android:inputType="textPassword"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -54,19 +56,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:text="Login"
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/brown_dark"
+        android:id="@+id/btn_login"
+        app:cornerRadius="@android:dimen/app_icon_size"
+        android:text="Login"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:id="@+id/registerNow"
-        android:text="Click_To_Register"
+        android:text="Click To Register"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
