@@ -21,7 +21,6 @@ import java.util.List;
 
 public class PastAttendanceDisplayer extends AppCompatActivity {
 
-    private DatabaseReference classesReference;
     private DatabaseReference attendanceReference;
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
@@ -36,7 +35,7 @@ public class PastAttendanceDisplayer extends AppCompatActivity {
         recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>(), null, null);
         recyclerView.setAdapter(recyclerViewAdapter);
 
-        classesReference = FirebaseDatabase.getInstance().getReference().child("Classes");
+
         attendanceReference = FirebaseDatabase.getInstance().getReference().child("Attendance");
 
         fetchClassesData();
@@ -53,7 +52,7 @@ public class PastAttendanceDisplayer extends AppCompatActivity {
                     boolean studentAttendance = false;
 
                     for (DataSnapshot presentSnapshot : snapshot.getChildren()) {
-                        String presentStudentId = presentSnapshot.getValue(String.class);
+                        String presentStudentId = presentSnapshot.getKey();
                         if (presentStudentId != null && presentStudentId.equals(userId)) {
                             studentAttendance = true;
                             break;

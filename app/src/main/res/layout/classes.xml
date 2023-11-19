@@ -5,25 +5,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/recyclerContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/border"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_centerHorizontal="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/recyclerContent"
-            android:layout_width="188dp"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:text="KIM"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:gravity="center"
+        android:text="KIM"
+        android:textStyle="bold" />
 
 </RelativeLayout>

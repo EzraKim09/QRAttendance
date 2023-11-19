@@ -58,13 +58,13 @@ public class PastClassesDisplayer extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
                 String selectedClassId = spinnerClasses.getSelectedItem().toString();
-                attendanceReference.child(selectedClassId).orderByChild("Present").addListenerForSingleValueEvent(new ValueEventListener() {
+                attendanceReference.child(selectedClassId).orderByChild("timeStamp").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         List<String> itemValues = new ArrayList<>();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            String itemValue = snapshot.getValue(String.class);
-                            itemValues.add(itemValue);
+                            String rollNo = snapshot.getKey();
+                            itemValues.add(rollNo);
                         }
                         recyclerViewAdapter.setData(itemValues);
                         recyclerViewAdapter.notifyDataSetChanged();
