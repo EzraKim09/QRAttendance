@@ -14,7 +14,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 1. Download the apk called app-debug
 2. Install in mobile phone
 3. Login using ur college email ID (abc@iiita.ac.in)
-   ![MainActivity](https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0)
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0" width="300">
 
 4. Note: To access Instructor and Admin Activity, a new separate Account has to be created!!!
    ![LoginActivity](https://github.com/EzraKim09/QRAttendance/assets/117889472/a78003d2-82dd-405f-bb86-81b90e90b4f1)
@@ -55,7 +55,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 4. Add the SHA1 fingerprint of the project to your Firebase's SHA certificate fingerprints
 5. Modify the source code as needed
 
-##Libraries
+## Libraries
 1. glide - com.github.bumptech.glide:glide:4.16.0
 2. code-scanner - com.github.yuriy-budiyev:code-scanner:2.3.2
 3. zxing-android-embeded - com.journeyapps:zxing-android-embedded:4.3.0
