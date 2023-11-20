@@ -6,7 +6,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
   -[Student](#student)
   -[Instructor](#instructor)
   -[Admin](#admin)
-- [Instructions for Developers](#instructions-for-developers)
+- [Instructions](#instructions)
 - [Forking / Modifying](#forking--modifying)
 - [Libraries](#libraries)
 
@@ -49,7 +49,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 
 
 
-## Instructions for Developers
+## Instructions
 - The app is designed in a way that Students, Instructors and Admins will not use a same system.
 - But while testing the system out, u may need to act as an instructor (creating new classes) and students (scanning the classes) and admins.
 - In doing so, u may encounter unexpected scenarios. So, u need to understand how auth acc are handled in the app and other problems that may occur.
