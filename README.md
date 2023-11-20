@@ -8,6 +8,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
   -[Admin](#admin)
 - [Instructions for Developers](#instructions-for-developers)
 - [Forking / Modifying](#forking--modifying)
+- [Libraries](#libraries)
 
 ## Usage
 1. Download the apk called app-debug
@@ -53,3 +54,8 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 3. Link this project to the Firebase Project (preferrably using Android Studio)
 4. Add the SHA1 fingerprint of the project to your Firebase's SHA certificate fingerprints
 5. Modify the source code as needed
+
+##Libraries
+1. glide - com.github.bumptech.glide:glide:4.16.0
+2. code-scanner - com.github.yuriy-budiyev:code-scanner:2.3.2
+3. zxing-android-embeded - com.journeyapps:zxing-android-embedded:4.3.0
