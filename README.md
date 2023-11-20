@@ -6,8 +6,8 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
   -[Student](#student)
   -[Instructor](#instructor)
   -[Admin](#admin)
-- [Instructions for Developers](#instructions)
-- [Forking](#forking)
+- [Instructions for Developers](#instructions-for-developers)
+- [Forking / Modifying](#forking--modifying)
 
 ## Usage
 1. Download the apk called app-debug
