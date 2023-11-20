@@ -52,13 +52,18 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 ## Instructions for Developers
 - The app is designed in a way that Students, Instructors and Admins will not use a same system.
 - But while testing the system out, u may need to act as an instructor (creating new classes) and students (scanning the classes) and admins.
-- In doing so, u may encounter unexpected scenarios. So, u need to understand how auth acc are handled in the app.
+- In doing so, u may encounter unexpected scenarios. So, u need to understand how auth acc are handled in the app and other problems that may occur.
   ### Auth Account System
   - As soon as u open the app, u have to login ur college email acc. So that is the acc u will be using at that point.
   - But when u login (creating a new acc) as an instructor/admin, the auth acc is switched from ur college email acc to that created instructor/admin acc.
   - So before scanning the QR code again, make sure to sign out from the main page first - and then resignin to ur college email again.
   - If not, the attendance will be marked for the instructor/admin acc u had created.
   - And when checking the past attendance data, it will show for the instructor/admin acc.
+  ### Attendance Database System
+  - Suppose an instructor create a new class, and no student had scan that code yet.
+  - When a student click View Past Attendance to check for that particular class, it will not appear there yet.
+  - That is because until at least one student attend the class, the created class is not considered for attendable class.
+  - As soon as at least one student scan that class, it will appear on every student View Past Attendance page.
  
 ## Forking / Modifying
 1. Clone and install the project to ur system.
