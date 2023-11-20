@@ -14,7 +14,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 1. Download the apk called app-debug
 2. Install in mobile phone
 3. Login using ur college email ID (abc@iiita.ac.in)
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0" width="300">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0" width="10">
 
 4. Note: To access Instructor and Admin Activity, a new separate Account has to be created!!!
    ![LoginActivity](https://github.com/EzraKim09/QRAttendance/assets/117889472/a78003d2-82dd-405f-bb86-81b90e90b4f1)
