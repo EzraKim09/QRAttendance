@@ -7,12 +7,28 @@
     android:background="@drawable/bg_gradient"
     tools:context=".CreatedAccountsDisplayer">
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/back_button_style"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
+        android:id="@+id/instructorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/instructorText"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/brown_dark"
         android:text="Instructors"
-        android:textStyle="bold" />
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/instructorRecycler"
@@ -23,11 +39,15 @@
         android:layout_below="@+id/instructorText"/>
 
     <TextView
+        android:id="@+id/adminText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/adminText"
-        android:text="Admins"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/brown_dark"
+        android:text="Administrators"
+        android:textSize="30sp"
         android:textStyle="bold"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/instructorRecycler"/>
 
     <androidx.recyclerview.widget.RecyclerView

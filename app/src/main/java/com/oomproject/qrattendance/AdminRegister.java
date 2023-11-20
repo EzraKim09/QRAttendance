@@ -76,6 +76,9 @@ public class AdminRegister extends AppCompatActivity {
                                     updateDatabase(email);
                                     Toast.makeText(AdminRegister.this, "Account Created",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
                                     Toast.makeText(AdminRegister.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

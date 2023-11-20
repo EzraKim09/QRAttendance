@@ -76,6 +76,9 @@ public class InstructorRegister extends AppCompatActivity {
                                     updateDatabase(email);
                                     Toast.makeText(InstructorRegister.this, "Account Created",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), InstructorMenuActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
                                     Toast.makeText(InstructorRegister.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

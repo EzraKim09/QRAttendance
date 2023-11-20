@@ -3,8 +3,10 @@ package com.oomproject.qrattendance;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -40,6 +42,14 @@ public class PastClassesDisplayer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_class_displayer);
+
+        ImageButton back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -105,8 +115,8 @@ public class PastClassesDisplayer extends AppCompatActivity {
         TextView classDateDisplay = findViewById(R.id.classDateDisplay);
         ImageView classQrCodeDisplay = findViewById(R.id.classQrCodeDisplay);
 
-        instructorNameDisplay.setText(instructorName);
-        classDateDisplay.setText(classDate);
+        instructorNameDisplay.setText("Instructor: " + instructorName);
+        classDateDisplay.setText("Date: " + classDate);
 
         Bitmap qrCodeBitmap = generateQrCode(qrCode);
 
@@ -116,7 +126,7 @@ public class PastClassesDisplayer extends AppCompatActivity {
     private Bitmap generateQrCode(String qrCodeString) {
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            com.google.zxing.common.BitMatrix bitMatrix = multiFormatWriter.encode(qrCodeString, BarcodeFormat.QR_CODE, 500, 500);
+            com.google.zxing.common.BitMatrix bitMatrix = multiFormatWriter.encode(qrCodeString, BarcodeFormat.QR_CODE, 600, 600);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             return barcodeEncoder.createBitmap(bitMatrix);
         } catch (WriterException e) {

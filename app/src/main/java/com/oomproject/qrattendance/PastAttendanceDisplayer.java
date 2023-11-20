@@ -2,6 +2,8 @@ package com.oomproject.qrattendance;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,14 @@ public class PastAttendanceDisplayer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_attendance_displayer);
+
+        ImageButton back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,9 +71,9 @@ public class PastAttendanceDisplayer extends AppCompatActivity {
 
                     if (classId != null) {
                         if (studentAttendance) {
-                            classList.add("class ID: " + classId + " Status: Present");
+                            classList.add("Class ID: " + classId + "    Status: Present");
                         } else {
-                            classList.add("class ID: " + classId + " Status: Absent");
+                            classList.add("Class ID: " + classId + "    Status: Absent");
                         }
                     }
                 }

@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,14 @@ public class CreatedClassesDisplayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_classes_displayer);
 
+        ImageButton back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         classRecyclerView = findViewById(R.id.classRecycler);
         classRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         classRecyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>(), new ArrayList<>(), new RecyclerViewAdapter.OnItemClickListener() {
@@ -50,7 +59,7 @@ public class CreatedClassesDisplayer extends AppCompatActivity {
     }
 
     private void fetchDatabaseData() {
-        classesReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        classesReference.orderByChild("timeStamp").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 classList.clear();

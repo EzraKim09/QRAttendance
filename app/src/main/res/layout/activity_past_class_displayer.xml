@@ -7,12 +7,25 @@
     android:background="@drawable/bg_gradient"
     tools:context=".PastClassesDisplayer">
 
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/back_button_style"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/brown_dark"
         android:text="Classes"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -22,9 +35,10 @@
         android:id="@+id/spinnerClasses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:autofillHints="select class"
         android:layout_centerHorizontal="true"
+        android:background="@color/brown"
         android:layout_below="@+id/textView" />
 
     <TextView
@@ -32,8 +46,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/instructorNameDisplay"
         android:layout_below="@id/spinnerClasses"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="10dp"
         android:textSize="20sp"
         android:hint="Instructor Name"/>
 
@@ -44,7 +58,7 @@
         android:layout_below="@id/spinnerClasses"
         android:textSize="16sp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true"
         android:hint="Class Date" />
 
@@ -53,18 +67,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/classQrCodeDisplay"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@id/instructorNameDisplay"
         android:src="@drawable/baseline_qr_code_24" />
 
+
     <TextView
+        android:id="@+id/attendanceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/classQrCodeDisplay"
-        android:id="@+id/attendanceTextView"
-        android:text="Atendance Register:"
         android:layout_marginTop="30dp"
-        android:textSize="18sp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/brown_dark"
+        android:text="Attendance Register"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/classQrCodeDisplay"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -74,5 +92,14 @@
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/attendanceTextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerView"
+        android:layout_marginTop="15dp"
+        android:text="------------ End Of List ------------"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
 </RelativeLayout>
