@@ -66,11 +66,12 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
   - As soon as at least one student scan that class, it will appear on every student View Past Attendance page.
  
 ## Forking / Modifying
-1. Clone and install the project to ur system.
-2. Create a Firebase Project using Realtime Database, EmailandPassword Signin and Google Signin
-3. Link this project to the Firebase Project (preferrably using Android Studio)
-4. Add the SHA1 fingerprint of the project to your Firebase's SHA certificate fingerprints
-5. Modify the source code as needed
+1̶. C̶l̶o̶n̶e̶ a̶n̶d̶ i̶n̶s̶t̶a̶l̶l̶ t̶h̶e̶ p̶r̶o̶j̶e̶c̶t̶ t̶o̶ u̶r̶ s̶y̶s̶t̶e̶m̶. 
+2̶. C̶r̶e̶a̶t̶e̶ a̶ F̶i̶r̶e̶b̶a̶s̶e̶ P̶r̶o̶j̶e̶c̶t̶ u̶s̶i̶n̶g̶ R̶e̶a̶l̶t̶i̶m̶e̶ D̶a̶t̶a̶b̶a̶s̶e̶, E̶m̶a̶i̶l̶a̶n̶d̶P̶a̶s̶s̶w̶o̶r̶d̶ S̶i̶g̶n̶i̶n̶ a̶n̶d̶ G̶o̶o̶g̶l̶e̶ S̶i̶g̶n̶i̶n̶
+3̶. L̶i̶n̶k̶ t̶h̶i̶s̶ p̶r̶o̶j̶e̶c̶t̶ t̶o̶ t̶h̶e̶ F̶i̶r̶e̶b̶a̶s̶e̶ P̶r̶o̶j̶e̶c̶t̶ (̶p̶r̶e̶f̶e̶r̶r̶a̶b̶l̶y̶ u̶s̶i̶n̶g̶ A̶n̶d̶r̶o̶i̶d̶ S̶t̶u̶d̶i̶o̶)̶ 
+4̶. A̶d̶d̶ t̶h̶e̶ S̶H̶A̶1̶ f̶i̶n̶g̶e̶r̶p̶r̶i̶n̶t̶ o̶f̶ t̶h̶e̶ p̶r̶o̶j̶e̶c̶t̶ t̶o̶ y̶o̶u̶r̶ F̶i̶r̶e̶b̶a̶s̶e̶'s̶ S̶H̶A̶ c̶e̶r̶t̶i̶f̶i̶c̶a̶t̶e̶ f̶i̶n̶g̶e̶r̶p̶r̶i̶n̶t̶s̶ 
+5̶. M̶o̶d̶i̶f̶y̶ t̶h̶e̶ s̶o̶u̶r̶c̶e̶ c̶o̶d̶e̶ a̶s̶ n̶e̶e̶d̶e̶d̶
+  ###Currently not Available for Modification due to Database Issue -- Just use the apk provided for the time being
 
 ## Libraries
 1. glide - com.github.bumptech.glide:glide:4.16.0
