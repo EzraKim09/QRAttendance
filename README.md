@@ -14,15 +14,15 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
 1. Download the apk called app-debug
 2. Install in mobile phone
 3. Login using ur college email ID (abc@iiita.ac.in)
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0" width="5" height="10">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/7f460de2-4e5a-4183-bc0f-f113807ea3b0" width="100" height="200">
 
 4. Note: To access Instructor and Admin Activity, a new separate Account has to be created!!!
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/a78003d2-82dd-405f-bb86-81b90e90b4f1" width="5" height="10">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/a78003d2-82dd-405f-bb86-81b90e90b4f1" width="100" height="200">
 
 ### Student
 1. Scan the QR code generated from the app (Cannot be used to scan external QR codes)
 2. View Past Attendances
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/0f5922a5-836d-4cd2-97c5-cad2a2eb7ed7" width="5" height="10">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/0f5922a5-836d-4cd2-97c5-cad2a2eb7ed7" width="100" height="200">
 
 ### Instructor
 1. Login or Register to an Instructor Account
@@ -30,12 +30,12 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
    <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/f49a3876-152c-4bd4-a4f8-7ad719abe796" width="5" height="10">
 
 4. Or view past classes created with the students that had attended
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/6dc95d7d-6002-45a2-8637-8564efa4fd27" width="5" height="10">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/6dc95d7d-6002-45a2-8637-8564efa4fd27" width="100" height="200">
 
 ### Admin
 1. Login or Register to an Admin Account
 2. Check the classes that had been created as well as Instructors and Admins Accounts
-   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/140e7167-b3fc-4e92-9cbf-637924f63c68" width="5" height="10">
+   <img src="https://github.com/EzraKim09/QRAttendance/assets/117889472/140e7167-b3fc-4e92-9cbf-637924f63c68" width="100" height="200">
 
 ## Instructions for Developers
 - The app is designed in a way that Students, Instructors and Admins will not use a same system.
