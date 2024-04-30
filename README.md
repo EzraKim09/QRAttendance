@@ -66,7 +66,7 @@ QR-Based Attendance System - 3rd Semester, OOM C3 Project
   - As soon as at least one student scan that class, it will appear on every student View Past Attendance page.
  
 ## Forking / Modifying
-  ### Currently not Available for Modification due to Database Issue -- Just use the apk provided for the time being
+  ### Currently not Available for Modification because I forgot to add gitignore and all my database details are in here (Please don't steal my data). I will fix this later when I have time.
 
 ## Libraries
 1. glide - com.github.bumptech.glide:glide:4.16.0
